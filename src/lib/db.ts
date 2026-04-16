@@ -1,51 +1,49 @@
-import { neon, NeonQueryFunction } from '@neondatabase/serverless';
+import { neon } from '@neondatabase/serverless';
 
-let _sql: NeonQueryFunction<false, false> | null = null;
-let dbInitialized = false;
+let _sql: ReturnType<typeof neon> | null = null;
+let _initialized = false;
 
 function getSql() {
   if (!_sql) {
-    _sql = neon(process.env.DATABASE_URL!);
+    const url = process.env.DATABASE_URL;
+    if (!url) throw new Error('DATABASE_URL is not set');
+    _sql = neon(url);
   }
   return _sql;
 }
 
 export async function ensureDb() {
+  if (_initialized) return getSql();
   const sql = getSql();
-  if (dbInitialized) return sql;
-
   await sql`
     CREATE TABLE IF NOT EXISTS fm_members (
       id SERIAL PRIMARY KEY,
-      family_code VARCHAR(8) NOT NULL,
-      name VARCHAR(100) NOT NULL,
-      age_group VARCHAR(20) DEFAULT 'adult',
-      avatar_color VARCHAR(7) DEFAULT '#6366f1',
-      likes TEXT[] DEFAULT '{}',
-      dislikes TEXT[] DEFAULT '{}',
-      restrictions TEXT[] DEFAULT '{}',
-      allergies TEXT[] DEFAULT '{}',
-      created_at TIMESTAMP DEFAULT NOW()
+      family_code TEXT NOT NULL,
+      name TEXT NOT NULL,
+      age_group TEXT NOT NULL DEFAULT 'adult',
+      avatar_color TEXT NOT NULL DEFAULT '#10b981',
+      likes JSONB NOT NULL DEFAULT '[]',
+      dislikes JSONB NOT NULL DEFAULT '[]',
+      restrictions JSONB NOT NULL DEFAULT '[]',
+      allergies JSONB NOT NULL DEFAULT '[]',
+      created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
     )
   `;
-
   await sql`
     CREATE TABLE IF NOT EXISTS fm_meals (
       id SERIAL PRIMARY KEY,
-      family_code VARCHAR(8) NOT NULL,
-      name VARCHAR(200) NOT NULL,
-      meal_type VARCHAR(20) DEFAULT 'dinner',
-      meal_date DATE DEFAULT CURRENT_DATE,
+      family_code TEXT NOT NULL,
+      name TEXT NOT NULL,
+      meal_type TEXT NOT NULL DEFAULT 'dinner',
+      meal_date DATE NOT NULL DEFAULT CURRENT_DATE,
       rating INTEGER,
       notes TEXT,
-      created_at TIMESTAMP DEFAULT NOW()
+      created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
     )
   `;
-
-  await sql`CREATE INDEX IF NOT EXISTS idx_fm_members_family ON fm_members(family_code)`;
-  await sql`CREATE INDEX IF NOT EXISTS idx_fm_meals_family ON fm_meals(family_code)`;
-
-  dbInitialized = true;
+  await sql`CREATE INDEX IF NOT EXISTS fm_members_code_idx ON fm_members(family_code)`;
+  await sql`CREATE INDEX IF NOT EXISTS fm_meals_code_idx ON fm_meals(family_code)`;
+  await sql`CREATE INDEX IF NOT EXISTS fm_meals_date_idx ON fm_meals(meal_date DESC)`;
+  _initialized = true;
   return sql;
 }
-test content
