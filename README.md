@@ -1,33 +1,22 @@
 # Family Mealtime Manager
 
-Family food preferences, dietary restrictions and allergy tracker with smart meal suggestions.
+Track food preferences, dietary restrictions and allergies across every family member - and get smart meal suggestions that work for everyone.
 
 ## Features
 
-- Track eating preferences, dietary restrictions and allergies per family member
-- Smart meal suggestions that respect everyone's constraints
-- Meal logging with ratings and notes
-- Family code system for multi-device access
-- Kid-friendly meal boosting for families with children
-- Dark mode, mobile-first design
+- Family member profiles with age groups, likes, dislikes, restrictions, and allergies
+- Constraint-based meal suggestion engine (filters allergens and restrictions, scores by preferences)
+- Meal log with ratings and notes
+- Multi-device access via 6-character family codes
+- Dark mode, mobile-first UI
 
-## Tech Stack
+## Stack
 
-- Next.js + React + TypeScript
-- Tailwind CSS (dark mode)
-- Neon PostgreSQL (serverless)
+- Next.js 16 + React 19 + TypeScript
+- Tailwind CSS v4
+- Neon serverless Postgres
 - Vercel deployment
 
-## Getting Started
+## Environment
 
-```bash
-npm install
-npm run dev
-```
-
-Set `DATABASE_URL` in your `.env.local` to a Neon PostgreSQL connection string.
-# Family Mealtime Manager# Family Mealtime Manager
-
-testplaceholdertest change to README# Family Mealtime Manager
-
-Family food preferences, dietary restrictions and allergy tracker with smart meal suggestions.
+Set `DATABASE_URL` in your deployment environment (Neon connection string).
