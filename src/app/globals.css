@@ -1,29 +1,462 @@
 @import "tailwindcss";
 
-:root {
-  --background: #030712;
-  --foreground: #f3f4f6;
+/* ---------------------------------------------------------------------- */
+/* Design tokens — see docs/VISION.md. Dark is the default; [data-theme=   */
+/* "light"] overrides for the daytime prep-kitchen look. Both are          */
+/* first-class, not an afterthought.                                      */
+/* ---------------------------------------------------------------------- */
+
+:root,
+:root[data-theme='dark'] {
+  --counter: #0c0c0d;
+  --counter-2: #141416;
+  --steel: #2a2b2f;
+  --paper: #f6f1e7;
+  --paper-2: #eae3d6;
+  --ink: #141414;
+  --ink-soft: #5c5a55;
+  --chalk: #f2efe8;
+  --chalk-soft: #9a9a9e;
+  --pass: #ff4f0f;
+  --pass-ink: #1a0a02;
+  --plated: #21e6a1;
+  --eightysix: #e11d2e;
+  --note: #ffe86b;
+}
+
+:root[data-theme='light'] {
+  --counter: #ede7da;
+  --counter-2: #e3dccb;
+  --steel: #c9c1b0;
+  --paper: #fffdf8;
+  --paper-2: #f1ece1;
+  --ink: #141414;
+  --ink-soft: #5c5a55;
+  --chalk: #141414;
+  --chalk-soft: #5c5a55;
+  --pass: #e8430a;
+  --pass-ink: #ffffff;
+  --plated: #0e9f6e;
+  --eightysix: #c8102e;
+  --note: #f5d93a;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-counter: var(--counter);
+  --color-counter-2: var(--counter-2);
+  --color-steel: var(--steel);
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-chalk: var(--chalk);
+  --color-chalk-soft: var(--chalk-soft);
+  --color-pass: var(--pass);
+  --color-pass-ink: var(--pass-ink);
+  --color-plated: var(--plated);
+  --color-eightysix: var(--eightysix);
+  --color-note: var(--note);
+
+  --font-display: var(--font-bebas-neue);
+  --font-body: var(--font-space-grotesk);
+  --font-mono: var(--font-jetbrains-mono);
+}
+
+html {
+  color-scheme: dark;
+}
+html[data-theme='light'] {
+  color-scheme: light;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  background: var(--counter);
+  color: var(--chalk);
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
 }
 
-input[type="date"]::-webkit-calendar-picker-indicator {
+* {
+  border-color: var(--steel);
+}
+
+/* Visible pass-orange focus ring on every interactive element, everywhere —
+   see docs/slices/05-service.md's Hardening scope. `:focus-visible` (not
+   bare `:focus`) so it only shows for keyboard/assistive-tech focus, not
+   every mouse click. Field's own inputs already carry an explicit
+   `focus:ring-2 focus:ring-pass` (Tailwind's focus, not focus-visible,
+   since a text field's ring on click is expected) — this rule is the
+   catch-all for every button, link and custom control that doesn't set its
+   own ring, so nothing in the app can end up with an invisible focus state. */
+:focus-visible {
+  outline: 2px solid var(--pass);
+  outline-offset: 2px;
+}
+
+/* Counter noise: a faint grain over the dark/light background. Pure CSS,
+   no image files. */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: radial-gradient(circle at 1px 1px, #ffffff 1px, transparent 0);
+  background-size: 3px 3px;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Ticket — the core card. Paper background, ink text, perforated top      */
+/* edge (radial-gradient mask), subtle paper grain, hard 2px shadow.       */
+/* Structure: .rk-ticket (shadow block) > .rk-ticket__paper (masked paper) */
+/* ---------------------------------------------------------------------- */
+
+.rk-ticket {
+  position: relative;
+  border-radius: 3px;
+  /* .rk-ticket__shadow below is absolutely positioned (inset: 0) so it
+     matches the paper's natural content height. If a flex/grid parent
+     stretches this ticket to a taller sibling's height (the default
+     align-items: stretch), the shadow would stretch too and float below the
+     visible paper. Opting this out of stretch keeps the ticket sized to its
+     own content everywhere it's dropped in. */
+  align-self: start;
+}
+
+.rk-ticket__shadow {
+  position: absolute;
+  inset: 0;
+  background: var(--ink);
+  border-radius: inherit;
+  transform: translate(3px, 3px);
+  z-index: 0;
+}
+
+.rk-ticket__paper {
+  position: relative;
+  z-index: 1;
+  background: var(--paper);
+  color: var(--ink);
+  border-radius: inherit;
+  border: 1px solid var(--steel);
+  padding-top: 7px;
+
+  --perf-d: 20px;
+  --perf-r: 5px;
+  mask-image: radial-gradient(circle var(--perf-r) at calc(var(--perf-d) / 2) 0px, transparent 99%, black 100%);
+  -webkit-mask-image: radial-gradient(
+    circle var(--perf-r) at calc(var(--perf-d) / 2) 0px,
+    transparent 99%,
+    black 100%
+  );
+  mask-repeat: repeat-x;
+  -webkit-mask-repeat: repeat-x;
+  mask-size: var(--perf-d) 100%;
+  -webkit-mask-size: var(--perf-d) 100%;
+  mask-position: 10px 0;
+  -webkit-mask-position: 10px 0;
+}
+
+/* Paper grain, layered under the perforation mask via a pseudo so it never
+   fights with content. */
+.rk-ticket__paper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0.5;
+  background-image: radial-gradient(circle at 1px 1px, rgba(20, 20, 20, 0.06) 1px, transparent 0);
+  background-size: 4px 4px;
+}
+
+.rk-ticket--note .rk-ticket__paper {
+  background: var(--note);
+}
+
+.rk-ticket--warning .rk-ticket__paper {
+  border-left: 4px solid var(--eightysix);
+}
+
+.rk-ticket--plated .rk-ticket__paper {
+  border-left: 4px solid var(--plated);
+}
+
+/* ---------------------------------------------------------------------- */
+/* Stamp — rotated, rubber-stamped label.                                  */
+/* ---------------------------------------------------------------------- */
+
+.rk-stamp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid currentColor;
+  border-radius: 4px;
+  padding: 0.15em 0.6em;
+  font-family: var(--font-mono), monospace;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transform: rotate(-4deg);
+  animation: rk-stamp-in 160ms ease-out;
+}
+
+@keyframes rk-stamp-in {
+  from {
+    transform: rotate(-4deg) scale(1.4);
+    opacity: 0;
+  }
+  to {
+    transform: rotate(-4deg) scale(1);
+    opacity: 1;
+  }
+}
+
+/* ---------------------------------------------------------------------- */
+/* Motion: tickets spike onto the rail. Respect reduced motion.            */
+/* ---------------------------------------------------------------------- */
+
+@keyframes rk-spike-in {
+  from {
+    transform: translateY(8px);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(-1px);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.rk-spike-in {
+  animation: rk-spike-in 180ms cubic-bezier(0.2, 0.8, 0.3, 1.2);
+}
+
+@keyframes rk-strike {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.rk-strike {
+  position: relative;
+}
+.rk-strike::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  height: 2px;
+  background: currentColor;
+  animation: rk-strike 200ms ease-out forwards;
+}
+
+@keyframes rk-sheet-in {
+  from {
+    transform: translateY(12px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.rk-sheet-in {
+  animation: rk-sheet-in 200ms cubic-bezier(0.2, 0.8, 0.3, 1);
+}
+
+/* The Pass: a soft radial pass-orange glow behind today's column/day chip —
+   the "heat lamp". Pure CSS, positioned behind the element's own content
+   via a pseudo so it never intercepts clicks. */
+.rk-heat-lamp {
+  position: relative;
+}
+.rk-heat-lamp::before {
+  content: '';
+  position: absolute;
+  inset: -16px -12px auto -12px;
+  height: 160px;
+  background: radial-gradient(ellipse at top, var(--pass), transparent 70%);
+  opacity: 0.25;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rk-spike-in,
+  .rk-stamp,
+  .rk-strike::after,
+  .rk-sheet-in {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+  }
+  * {
+    transition-duration: 1ms !important;
+  }
+}
+
+/* ---------------------------------------------------------------------- */
+/* Skeleton ticket — a paper-coloured shimmer block shown while a slot's    */
+/* plan entries are still loading, in place of the ghost "+ Fire           */
+/* something" tile. "No spinners; use skeleton tickets" — see VISION.md.   */
+/* ---------------------------------------------------------------------- */
+
+.rk-skeleton {
+  position: relative;
+  overflow: hidden;
+  background: var(--paper-2);
+}
+
+.rk-skeleton::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.18), transparent);
+  animation: rk-shimmer 1.4s ease-in-out infinite;
+}
+
+@keyframes rk-shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rk-skeleton::after {
+    animation: none;
+    display: none;
+  }
+}
+
+/* Ticket shake for a rejected login attempt. */
+@keyframes rk-shake {
+  10%,
+  90% {
+    transform: translateX(-1px);
+  }
+  20%,
+  80% {
+    transform: translateX(2px);
+  }
+  30%,
+  50%,
+  70% {
+    transform: translateX(-4px);
+  }
+  40%,
+  60% {
+    transform: translateX(4px);
+  }
+}
+
+.rk-shake {
+  animation: rk-shake 420ms ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rk-shake {
+    animation: none;
+  }
+}
+
+/* ---------------------------------------------------------------------- */
+/* Hard 2px shadow used on buttons — collapses on press.                   */
+/* ---------------------------------------------------------------------- */
+
+.rk-hard-shadow {
+  box-shadow: 2px 2px 0 0 var(--ink);
+  transition: transform 100ms ease, box-shadow 100ms ease;
+}
+.rk-hard-shadow:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0 0 0 0 var(--ink);
+}
+
+/* ---------------------------------------------------------------------- */
+/* The Order — a thermal-printed supplier order. One narrow paper strip,   */
+/* perforated top (same mask technique as .rk-ticket__paper) and a         */
+/* zigzag TORN bottom edge, built as a separate strip below the paper      */
+/* rather than fighting the top perforation for the same mask-image        */
+/* property. See docs/slices/04-order.md, "Screen — /order".               */
+/* ---------------------------------------------------------------------- */
+
+.rk-receipt {
+  position: relative;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.rk-receipt__paper {
+  position: relative;
+  background: var(--paper);
+  color: var(--ink);
+  border: 1px solid var(--steel);
+  border-bottom: none;
+  padding-top: 8px;
+
+  --perf-d: 20px;
+  --perf-r: 5px;
+  mask-image: radial-gradient(circle var(--perf-r) at calc(var(--perf-d) / 2) 0px, transparent 99%, black 100%);
+  -webkit-mask-image: radial-gradient(
+    circle var(--perf-r) at calc(var(--perf-d) / 2) 0px,
+    transparent 99%,
+    black 100%
+  );
+  mask-repeat: repeat-x;
+  -webkit-mask-repeat: repeat-x;
+  mask-size: var(--perf-d) 100%;
+  -webkit-mask-size: var(--perf-d) 100%;
+  mask-position: 10px 0;
+  -webkit-mask-position: 10px 0;
+}
+
+.rk-receipt__paper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  background-image: radial-gradient(circle at 1px 1px, rgba(20, 20, 20, 0.06) 1px, transparent 0);
+  background-size: 4px 4px;
+}
+
+/* The torn zigzag strip — two triangle-wave gradients, one for each
+   diagonal, tiled and offset by half a tooth so they read as one
+   continuous saw-tooth edge. Coloured to match the paper so it reads as
+   part of the same sheet, sitting directly under .rk-receipt__paper with no
+   gap or border seam between them. */
+.rk-receipt__torn {
+  height: 14px;
+  margin-top: -1px;
+  background-image: linear-gradient(135deg, var(--paper) 50%, transparent 50.5%),
+    linear-gradient(45deg, var(--paper) 50%, transparent 50.5%);
+  background-size:
+    16px 14px,
+    16px 14px;
+  background-position:
+    0 0,
+    8px 0;
+  background-repeat: repeat-x, repeat-x;
+}
+
+.rk-receipt__dashed {
+  border-top: 1px dashed var(--steel);
+}
+
+input[type='date']::-webkit-calendar-picker-indicator {
   filter: invert(1);
 }
-
-select option {
-  background: #1f2937;
-  color: #f3f4f6;
+html[data-theme='light'] input[type='date']::-webkit-calendar-picker-indicator {
+  filter: none;
 }
-

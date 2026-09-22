@@ -1,9 +1,12 @@
-import { neon } from '@neondatabase/serverless';
+import { neon, type NeonQueryFunction } from '@neondatabase/serverless';
 
-let _sql: ReturnType<typeof neon> | null = null;
-let _initialized = false;
+// Lazily-created Neon client. No schema creation at runtime: migrations live
+// in db/migrations and are applied by scripts/migrate.mjs. Only tables
+// prefixed `fm_` belong to this app — the database is shared with unrelated
+// projects.
+let _sql: NeonQueryFunction<false, false> | null = null;
 
-function getSql() {
+function getSql(): NeonQueryFunction<false, false> {
   if (!_sql) {
     const url = process.env.DATABASE_URL;
     if (!url) throw new Error('DATABASE_URL is not set');
@@ -12,38 +15,20 @@ function getSql() {
   return _sql;
 }
 
-export async function ensureDb() {
-  if (_initialized) return getSql();
-  const sql = getSql();
-  await sql`
-    CREATE TABLE IF NOT EXISTS fm_members (
-      id SERIAL PRIMARY KEY,
-      family_code TEXT NOT NULL,
-      name TEXT NOT NULL,
-      age_group TEXT NOT NULL DEFAULT 'adult',
-      avatar_color TEXT NOT NULL DEFAULT '#10b981',
-      likes JSONB NOT NULL DEFAULT '[]',
-      dislikes JSONB NOT NULL DEFAULT '[]',
-      restrictions JSONB NOT NULL DEFAULT '[]',
-      allergies JSONB NOT NULL DEFAULT '[]',
-      created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
-    )
-  `;
-  await sql`
-    CREATE TABLE IF NOT EXISTS fm_meals (
-      id SERIAL PRIMARY KEY,
-      family_code TEXT NOT NULL,
-      name TEXT NOT NULL,
-      meal_type TEXT NOT NULL DEFAULT 'dinner',
-      meal_date DATE NOT NULL DEFAULT CURRENT_DATE,
-      rating INTEGER,
-      notes TEXT,
-      created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
-    )
-  `;
-  await sql`CREATE INDEX IF NOT EXISTS fm_members_code_idx ON fm_members(family_code)`;
-  await sql`CREATE INDEX IF NOT EXISTS fm_meals_code_idx ON fm_meals(family_code)`;
-  await sql`CREATE INDEX IF NOT EXISTS fm_meals_date_idx ON fm_meals(meal_date DESC)`;
-  _initialized = true;
-  return sql;
-}
+// A Proxy so `sql` stays lazy (no client, no DATABASE_URL read at import
+// time) while still forwarding both tagged-template calls (`sql\`...\``) and
+// method access (`sql.query(...)`, `sql.transaction(...)`) to the real
+// client once it exists.
+export const sql: NeonQueryFunction<false, false> = new Proxy(
+  (() => {}) as unknown as NeonQueryFunction<false, false>,
+  {
+    apply(_target, _thisArg, args) {
+      const client = getSql() as unknown as (...a: unknown[]) => unknown;
+      return client(...args);
+    },
+    get(_target, prop) {
+      const client = getSql() as unknown as Record<string | symbol, unknown>;
+      return client[prop];
+    },
+  }
+);

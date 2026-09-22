@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- The Rice Kitchen app icon: a pass-orange ticket with a perforated top
+       edge and an "RK" monogram. See docs/VISION.md (the pass / pass-ink /
+       counter colour tokens, reproduced here as literal hex since an SVG
+       icon can't read CSS variables) and docs/slices/05-service.md's PWA
+       scope. Generated to PNG by scripts/icons.mjs (sharp) — see that file
+       for the sizes committed under public/icons/. -->
+  <rect width="512" height="512" fill="#FF4F0F" />
+
+  <!-- Perforated top edge: a row of punched holes in the counter-dark
+       colour, echoing the Ticket component's own perforation mask
+       (globals.css's .rk-ticket__paper radial-gradient mask). -->
+  <g fill="#0C0C0D">
+    <circle cx="16" cy="40" r="15" />
+    <circle cx="80" cy="40" r="15" />
+    <circle cx="144" cy="40" r="15" />
+    <circle cx="208" cy="40" r="15" />
+    <circle cx="272" cy="40" r="15" />
+    <circle cx="336" cy="40" r="15" />
+    <circle cx="400" cy="40" r="15" />
+    <circle cx="464" cy="40" r="15" />
+    <circle cx="528" cy="40" r="15" />
+  </g>
+
+  <!-- RK monogram, plain bold sans (no external font dependency — Arial is
+       a universally available system font, per docs/slices/05-service.md's
+       explicit allowance of "paths or plain bold sans"). -->
+  <text
+    x="256"
+    y="336"
+    text-anchor="middle"
+    font-family="Arial, Helvetica, sans-serif"
+    font-weight="800"
+    font-size="224"
+    letter-spacing="-8"
+    fill="#1A0A02"
+  >RK</text>
+</svg>

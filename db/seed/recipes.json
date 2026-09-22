@@ -1,0 +1,860 @@
+[
+  {
+    "name": "Spaghetti Bolognese",
+    "description": "Classic mince pasta with hidden veg in the sauce.",
+    "meal_types": ["dinner"],
+    "tags": ["kid-friendly", "comfort", "batch-cook", "freezer-friendly"],
+    "servings": 4,
+    "prep_minutes": 10,
+    "cook_minutes": 35,
+    "favourite": true,
+    "ingredients": [
+      { "name": "beef mince", "quantity": 500, "unit": "g", "aisle": "meat-fish", "allergens": [], "optional": false },
+      { "name": "spaghetti", "quantity": 400, "unit": "g", "aisle": "pantry", "allergens": ["gluten"], "optional": false },
+      { "name": "onion", "quantity": 1, "unit": "pcs", "aisle": "produce", "allergens": [], "optional": false },
+      { "name": "garlic", "quantity": 2, "unit": "clove", "aisle": "produce", "allergens": [], "optional": false },
+      { "name": "carrots", "quantity": 2, "unit": "pcs", "aisle": "produce", "allergens": [], "optional": false, "note": "finely diced" },
+      { "name": "chopped tomatoes", "quantity": 2, "unit": "can", "aisle": "produce", "allergens": [], "optional": false },
+      { "name": "tomato puree", "quantity": 2, "unit": "tbsp", "aisle": "pantry", "allergens": [], "optional": false },
+      { "name": "beef stock", "quantity": 200, "unit": "ml", "aisle": "pantry", "allergens": [], "optional": false },
+      { "name": "dried oregano", "quantity": 1, "unit": "tsp", "aisle": "spices", "allergens": [], "optional": false },
+      { "name": "olive oil", "quantity": 1, "unit": "tbsp", "aisle": "pantry", "allergens": [], "optional": false },
+      { "name": "salt and pepper", "quantity": null, "unit": null, "aisle": "spices", "allergens": [], "optional": true, "note": "to taste" }
+    ],
+    "method": [
+      "Heat the oil in a large pan and soften the onion, garlic and carrot for 5 minutes.",
+      "Turn the heat up, add the mince and brown it all over, breaking it up as it cooks.",
+      "Stir in the tomato puree, chopped tomatoes, stock and oregano.",
+      "Simmer uncovered for 25 minutes, stirring occasionally, until rich and thickened.",
+      "Meanwhile cook the spaghetti in salted boiling water according to the pack.",
+      "Season the sauce to taste and serve over the drained spaghetti."
+    ]
+  },
+  {
+    "name": "Fish Fingers & Chips",
+    "description": "Oven-baked fish fingers with chunky chips and peas.",
+    "meal_types": ["dinner"],
+    "tags": ["kid-friendly"],
+    "servings": 4,
+    "prep_minutes": 15,
+    "cook_minutes": 30,
+    "ingredients": [
+      { "name": "cod fillets", "quantity": 500, "unit": "g", "aisle": "meat-fish", "allergens": ["fish"], "optional": false },
+      { "name": "plain flour", "quantity": 50, "unit": "g", "aisle": "bakery", "allergens": ["gluten"], "optional": false },
+      { "name": "eggs", "quantity": 2, "unit": "pcs", "aisle": "dairy-eggs", "allergens": ["eggs"], "optional": false },
+      { "name": "breadcrumbs", "quantity": 100, "unit": "g", "aisle": "bakery", "allergens": ["gluten"], "optional": false },
+      { "name": "potatoes", "quantity": 800, "unit": "g", "aisle": "produce", "allergens": [], "optional": false, "note": "cut into chips" },
+      { "name": "frozen peas", "quantity": 200, "unit": "g", "aisle": "frozen", "allergens": [], "optional": false },
+      { "name": "vegetable oil", "quantity": 2, "unit": "tbsp", "aisle": "pantry", "allergens": [], "optional": false }
+    ],
+    "method": [
+      "Heat the oven to 200C. Toss the chips in half the oil and spread on a tray.",
+      "Cut the cod into finger-sized strips.",
+      "Set up three dishes: flour, beaten egg, breadcrumbs. Coat each strip flour, then egg, then breadcrumbs.",
+      "Put the chips in the oven and roast for 25 minutes, turning halfway.",
+      "Lay the fish fingers on a tray with the remaining oil and bake for the last 12 minutes.",
+      "Boil the peas for 3 minutes and serve everything together."
+    ]
+  },
+  {
+    "name": "Chicken Fajitas",
+    "description": "Build-your-own wraps with peppers, chicken and toppings.",
+    "meal_types": ["dinner"],
+    "tags": ["kid-friendly", "quick"],
+    "servings": 4,
+    "prep_minutes": 15,
+    "cook_minutes": 15,
+    "favourite": true,
+    "ingredients": [
+      { "name": "chicken breasts", "quantity": 500, "unit": "g", "aisle": "meat-fish", "allergens": [], "optional": false, "note": "sliced" },
+      { "name": "peppers", "quantity": 3, "unit": "pcs", "aisle": "produce", "allergens": [], "optional": false, "note": "sliced" },
+      { "name": "onion", "quantity": 1, "unit": "pcs", "aisle": "produce", "allergens": [], "optional": false, "note": "sliced" },
+      { "name": "fajita spice mix", "quantity": 2, "unit": "tbsp", "aisle": "spices", "allergens": [], "optional": false },
+      { "name": "tortilla wraps", "quantity": 8, "unit": "pcs", "aisle": "bakery", "allergens": ["gluten"], "optional": false },
+      { "name": "soured cream", "quantity": 100, "unit": "ml", "aisle": "dairy-eggs", "allergens": ["dairy"], "optional": true, "note": "to serve" },
+      { "name": "lime", "quantity": 1, "unit": "pcs", "aisle": "produce", "allergens": [], "optional": false }
+    ],
+    "method": [
+      "Toss the sliced chicken and vegetables with the fajita spice mix.",
+      "Heat a large frying pan or wok until hot.",
+      "Fry the chicken and veg for 8-10 minutes, stirring often, until the chicken is cooked and the veg is charred at the edges.",
+      "Squeeze over the lime juice.",
+      "Warm the tortillas and bring everything to the table for everyone to build their own wraps."
+    ]
+  },
+  {
+    "name": "Mac & Cheese",
+    "description": "Creamy baked macaroni with a crunchy breadcrumb top.",
+    "meal_types": ["dinner"],
+    "tags": ["kid-friendly", "vegetarian", "comfort"],
+    "servings": 4,
+    "prep_minutes": 10,
+    "cook_minutes": 30,
+    "ingredients": [
+      { "name": "macaroni", "quantity": 350, "unit": "g", "aisle": "pantry", "allergens": ["gluten"], "optional": false },
+      { "name": "butter", "quantity": 50, "unit": "g", "aisle": "dairy-eggs", "allergens": ["dairy"], "optional": false },
+      { "name": "plain flour", "quantity": 50, "unit": "g", "aisle": "bakery", "allergens": ["gluten"], "optional": false },
+      { "name": "milk", "quantity": 600, "unit": "ml", "aisle": "dairy-eggs", "allergens": ["dairy"], "optional": false },
+      { "name": "cheddar cheese", "quantity": 250, "unit": "g", "aisle": "dairy-eggs", "allergens": ["dairy"], "optional": false, "note": "grated" },
+      { "name": "breadcrumbs", "quantity": 50, "unit": "g", "aisle": "bakery", "allergens": ["gluten"], "optional": true, "note": "for the topping" },
+      { "name": "Dijon mustard", "quantity": 1, "unit": "tsp", "aisle": "pantry", "allergens": [], "optional": true }
+    ],
+    "method": [
+      "Cook the macaroni in salted boiling water until just al dente, then drain.",
+      "Melt the butter in a saucepan, stir in the flour and cook for 1 minute to make a roux.",
+      "Gradually whisk in the milk, then simmer gently until thickened.",
+      "Take off the heat and stir in most of the cheese and the mustard until melted.",
+      "Combine the sauce with the macaroni and tip into a baking dish.",
+      "Scatter the remaining cheese and breadcrumbs on top and grill until golden and bubbling."
+    ]
+  },
+  {
+    "name": "Pizza Night",
+    "description": "Homemade pizza with everyone picking their own toppings.",
+    "meal_types": ["dinner"],
+    "tags": ["kid-friendly", "vegetarian"],
+    "servings": 4,
+    "prep_minutes": 20,
+    "cook_minutes": 12,
+    "ingredients": [
+      { "name": "pizza dough balls", "quantity": 4, "unit": "pcs", "aisle": "bakery", "allergens": ["gluten"], "optional": false },
+      { "name": "passata", "quantity": 300, "unit": "ml", "aisle": "pantry", "allergens": [], "optional": false },
+      { "name": "mozzarella", "quantity": 250, "unit": "g", "aisle": "dairy-eggs", "allergens": ["dairy"], "optional": false },
+      { "name": "mixed peppers", "quantity": 2, "unit": "pcs", "aisle": "produce", "allergens": [], "optional": false },
+      { "name": "red onion", "quantity": 1, "unit": "pcs", "aisle": "produce", "allergens": [], "optional": false },
+      { "name": "dried oregano", "quantity": 1, "unit": "tsp", "aisle": "spices", "allergens": [], "optional": false },
+      { "name": "olive oil", "quantity": 2, "unit": "tbsp", "aisle": "pantry", "allergens": [], "optional": false }
+    ],
+    "method": [
+      "Heat the oven as high as it will go, with a tray inside to heat up.",
+      "Roll each dough ball out into a thin round on a floured surface.",
+      "Spread passata over each base, leaving a border for the crust.",
+      "Scatter over the mozzarella and vegetable toppings, then drizzle with oil and oregano.",
+      "Slide onto the hot tray and bake for 10-12 minutes until the crust is golden and cheese bubbling."
+    ]
+  },
+  {
+    "name": "Chicken Nuggets & Veg",
+    "description": "Homemade chicken nuggets with roasted veg sticks.",
+    "meal_types": ["dinner"],
+    "tags": ["kid-friendly"],
+    "servings": 4,
+    "prep_minutes": 15,
+    "cook_minutes": 20,
+    "ingredients": [
+      { "name": "chicken breasts", "quantity": 500, "unit": "g", "aisle": "meat-fish", "allergens": [], "optional": false, "note": "cut into chunks" },
+      { "name": "plain flour", "quantity": 50, "unit": "g", "aisle": "bakery", "allergens": ["gluten"], "optional": false },
+      { "name": "eggs", "quantity": 2, "unit": "pcs", "aisle": "dairy-eggs", "allergens": ["eggs"], "optional": false },
+      { "name": "breadcrumbs", "quantity": 150, "unit": "g", "aisle": "bakery", "allergens": ["gluten"], "optional": false },
+      { "name": "broccoli", "quantity": 300, "unit": "g", "aisle": "produce", "allergens": [], "optional": false },
+      { "name": "carrots", "quantity": 300, "unit": "g", "aisle": "produce", "allergens": [], "optional": false, "note": "cut into sticks" },
+      { "name": "olive oil", "quantity": 1, "unit": "tbsp", "aisle": "pantry", "allergens": [], "optional": false }
+    ],
+    "method": [
+      "Heat the oven to 200C.",
+      "Coat the chicken chunks in flour, then beaten egg, then breadcrumbs.",
+      "Lay on an oiled tray and bake for 18-20 minutes, turning halfway, until golden and cooked through.",
+      "Toss the broccoli and carrot sticks with the oil and roast alongside for the last 15 minutes.",
+      "Serve the nuggets with the roasted veg."
+    ]
+  },
+  {
+    "name": "Jacket Potatoes",
+    "description": "Loaded jacket potatoes with beans, cheese or tuna.",
+    "meal_types": ["dinner"],
+    "tags": ["kid-friendly", "vegetarian", "gluten-free"],
+    "servings": 4,
+    "prep_minutes": 5,
+    "cook_minutes": 60,
+    "ingredients": [
+      { "name": "baking potatoes", "quantity": 4, "unit": "pcs", "aisle": "produce", "allergens": [], "optional": false },
+      { "name": "baked beans", "quantity": 1, "unit": "can", "aisle": "pantry", "allergens": [], "optional": true },
+      { "name": "cheddar cheese", "quantity": 150, "unit": "g", "aisle": "dairy-eggs", "allergens": ["dairy"], "optional": true, "note": "grated" },
+      { "name": "tuna", "quantity": 1, "unit": "can", "aisle": "meat-fish", "allergens": ["fish"], "optional": true, "note": "drained, mixed with mayo" },
+      { "name": "butter", "quantity": 30, "unit": "g", "aisle": "dairy-eggs", "allergens": ["dairy"], "optional": true }
+    ],
+    "method": [
+      "Heat the oven to 200C. Prick the potatoes all over with a fork.",
+      "Bake directly on the shelf for about an hour, until the skins are crisp and the middles soft.",
+      "Warm the baked beans in a small pan.",
+      "Split the potatoes open and fluff the insides with a fork.",
+      "Load with whichever toppings each person fancies: beans, cheese, tuna or butter."
+    ]
+  },
+  {
+    "name": "Mild Chicken Curry",
+    "description": "Gentle korma-style curry with rice and naan.",
+    "meal_types": ["dinner"],
+    "tags": ["kid-friendly"],
+    "servings": 4,
+    "prep_minutes": 10,
+    "cook_minutes": 30,
+    "ingredients": [
+      { "name": "chicken thighs", "quantity": 600, "unit": "g", "aisle": "meat-fish", "allergens": [], "optional": false, "note": "diced" },
+      { "name": "onion", "quantity": 1, "unit": "pcs", "aisle": "produce", "allergens": [], "optional": false },
+      { "name": "garlic", "quantity": 2, "unit": "clove", "aisle": "produce", "allergens": [], "optional": false },
+      { "name": "ginger", "quantity": 1, "unit": "tbsp", "aisle": "produce", "allergens": [], "optional": false, "note": "grated" },
+      { "name": "mild curry powder", "quantity": 2, "unit": "tbsp", "aisle": "spices", "allergens": [], "optional": false },
+      { "name": "coconut milk", "quantity": 400, "unit": "ml", "aisle": "pantry", "allergens": [], "optional": false },
+      { "name": "basmati rice", "quantity": 300, "unit": "g", "aisle": "pantry", "allergens": [], "optional": false },
+      { "name": "naan bread", "quantity": 4, "unit": "pcs", "aisle": "bakery", "allergens": ["gluten"], "optional": true }
+    ],
+    "method": [
+      "Fry the onion, garlic and ginger in a large pan until soft.",
+      "Stir in the curry powder and cook for 1 minute until fragrant.",
+      "Add the chicken and brown on all sides.",
+      "Pour in the coconut milk, bring to a simmer and cook for 20 minutes until the chicken is tender.",
+      "Meanwhile cook the rice according to the pack.",
+      "Serve the curry over rice with warm naan on the side."
+    ]
+  },
+  {
+    "name": "Toad in the Hole",
+    "description": "Sausages in crispy Yorkshire pudding batter with gravy.",
+    "meal_types": ["dinner"],
+    "tags": ["kid-friendly", "comfort"],
+    "servings": 4,
+    "prep_minutes": 10,
+    "cook_minutes": 30,
+    "ingredients": [
+      { "name": "pork sausages", "quantity": 8, "unit": "pcs", "aisle": "meat-fish", "allergens": [], "optional": false },
+      { "name": "plain flour", "quantity": 140, "unit": "g", "aisle": "bakery", "allergens": ["gluten"], "optional": false },
+      { "name": "eggs", "quantity": 3, "unit": "pcs", "aisle": "dairy-eggs", "allergens": ["eggs"], "optional": false },
+      { "name": "milk", "quantity": 200, "unit": "ml", "aisle": "dairy-eggs", "allergens": ["dairy"], "optional": false },
+      { "name": "vegetable oil", "quantity": 2, "unit": "tbsp", "aisle": "pantry", "allergens": [], "optional": false },
+      { "name": "onion gravy", "quantity": 300, "unit": "ml", "aisle": "pantry", "allergens": ["gluten"], "optional": false, "note": "shop-bought or homemade" }
+    ],
+    "method": [
+      "Whisk the flour, eggs and milk to a smooth batter and rest for 20 minutes.",
+      "Heat the oven to 220C. Put the oil and sausages into a roasting tin and heat in the oven for 10 minutes until sizzling.",
+      "Quickly pour the batter around the sausages and return to the oven immediately.",
+      "Bake for 25-30 minutes without opening the door, until well risen and golden.",
+      "Warm the gravy and serve straight from the tin."
+    ]
+  },
+  {
+    "name": "Shepherd's Pie",
+    "description": "Lamb mince with veg topped with creamy mashed potato.",
+    "meal_types": ["dinner"],
+    "tags": ["kid-friendly", "comfort", "freezer-friendly"],
+    "servings": 4,
+    "prep_minutes": 20,
+    "cook_minutes": 45,
+    "favourite": true,
+    "ingredients": [
+      { "name": "lamb mince", "quantity": 500, "unit": "g", "aisle": "meat-fish", "allergens": [], "optional": false },
+      { "name": "onion", "quantity": 1, "unit": "pcs", "aisle": "produce", "allergens": [], "optional": false },
+      { "name": "carrots", "quantity": 2, "unit": "pcs", "aisle": "produce", "allergens": [], "optional": false },
+      { "name": "frozen peas", "quantity": 100, "unit": "g", "aisle": "frozen", "allergens": [], "optional": false },
+      { "name": "beef stock", "quantity": 300, "unit": "ml", "aisle": "pantry", "allergens": [], "optional": false },
+      { "name": "tomato puree", "quantity": 2, "unit": "tbsp", "aisle": "pantry", "allergens": [], "optional": false },
+      { "name": "potatoes", "quantity": 900, "unit": "g", "aisle": "produce", "allergens": [], "optional": false },
+      { "name": "butter", "quantity": 50, "unit": "g", "aisle": "dairy-eggs", "allergens": ["dairy"], "optional": false },
+      { "name": "milk", "quantity": 100, "unit": "ml", "aisle": "dairy-eggs", "allergens": ["dairy"], "optional": false },
+      { "name": "salt and pepper", "quantity": null, "unit": null, "aisle": "spices", "allergens": [], "optional": true, "note": "to taste" }
+    ],
+    "method": [
+      "Brown the mince with the onion and carrot in a large pan.",
+      "Stir in the stock and tomato puree, then simmer for 20 minutes. Add the peas for the last 5 minutes.",
+      "Meanwhile boil the potatoes until tender, then drain and mash with the butter and milk.",
+      "Spoon the mince into a baking dish and top with the mash, forking the surface.",
+      "Bake at 200C for 20 minutes until the top is golden."
+    ]
+  },
+  {
+    "name": "Stir-Fry Noodles",
+    "description": "Quick veggie and protein stir-fry with egg noodles.",
+    "meal_types": ["dinner"],
+    "tags": ["quick", "one-pan"],
+    "servings": 4,
+    "prep_minutes": 10,
+    "cook_minutes": 12,
+    "ingredients": [
+      { "name": "egg noodles", "quantity": 300, "unit": "g", "aisle": "pantry", "allergens": ["gluten", "eggs"], "optional": false },
+      { "name": "chicken breast", "quantity": 400, "unit": "g", "aisle": "meat-fish", "allergens": [], "optional": true, "note": "sliced, or use tofu" },
+      { "name": "mixed stir-fry vegetables", "quantity": 400, "unit": "g", "aisle": "produce", "allergens": [], "optional": false },
+      { "name": "soy sauce", "quantity": 3, "unit": "tbsp", "aisle": "pantry", "allergens": ["gluten", "soy"], "optional": false },
+      { "name": "sesame oil", "quantity": 1, "unit": "tbsp", "aisle": "pantry", "allergens": ["sesame"], "optional": false },
+      { "name": "garlic", "quantity": 2, "unit": "clove", "aisle": "produce", "allergens": [], "optional": false },
+      { "name": "ginger", "quantity": 1, "unit": "tsp", "aisle": "produce", "allergens": [], "optional": false, "note": "grated" }
+    ],
+    "method": [
+      "Cook the noodles according to the pack, then drain and set aside.",
+      "Heat a wok until smoking and stir-fry the chicken until cooked through, then remove.",
+      "Add the vegetables, garlic and ginger and stir-fry for 3-4 minutes.",
+      "Return the chicken to the wok, add the noodles, soy sauce and sesame oil.",
+      "Toss everything together over high heat for 2 minutes and serve immediately."
+    ]
+  },
+  {
+    "name": "Salmon & New Potatoes",
+    "description": "Pan-fried salmon with boiled new potatoes and greens.",
+    "meal_types": ["dinner"],
+    "tags": ["healthy", "pescatarian"],
+    "servings": 4,
+    "prep_minutes": 10,
+    "cook_minutes": 20,
+    "ingredients": [
+      { "name": "salmon fillets", "quantity": 4, "unit": "pcs", "aisle": "meat-fish", "allergens": ["fish"], "optional": false },
+      { "name": "new potatoes", "quantity": 600, "unit": "g", "aisle": "produce", "allergens": [], "optional": false },
+      { "name": "green beans", "quantity": 200, "unit": "g", "aisle": "produce", "allergens": [], "optional": false },
+      { "name": "lemon", "quantity": 1, "unit": "pcs", "aisle": "produce", "allergens": [], "optional": false },
+      { "name": "olive oil", "quantity": 2, "unit": "tbsp", "aisle": "pantry", "allergens": [], "optional": false },
+      { "name": "dill", "quantity": 1, "unit": "tbsp", "aisle": "spices", "allergens": [], "optional": true }
+    ],
+    "method": [
+      "Boil the new potatoes in salted water for 15-18 minutes until tender.",
+      "Pat the salmon dry and season. Heat the oil in a pan and fry skin-side down for 4 minutes.",
+      "Flip and cook for a further 2-3 minutes until just cooked through.",
+      "Steam the green beans for the last 4 minutes.",
+      "Squeeze lemon over the salmon and scatter with dill, then plate with the potatoes and beans."
+    ]
+  },
+  {
+    "name": "Chicken Caesar Salad",
+    "description": "Grilled chicken on romaine with parmesan and croutons.",
+    "meal_types": ["lunch", "dinner"],
+    "tags": ["healthy"],
+    "servings": 4,
+    "prep_minutes": 15,
+    "cook_minutes": 15,
+    "ingredients": [
+      { "name": "chicken breasts", "quantity": 400, "unit": "g", "aisle": "meat-fish", "allergens": [], "optional": false },
+      { "name": "romaine lettuce", "quantity": 2, "unit": "pcs", "aisle": "produce", "allergens": [], "optional": false },
+      { "name": "parmesan", "quantity": 50, "unit": "g", "aisle": "dairy-eggs", "allergens": ["dairy"], "optional": false, "note": "shaved" },
+      { "name": "croutons", "quantity": 80, "unit": "g", "aisle": "bakery", "allergens": ["gluten"], "optional": false },
+      { "name": "caesar dressing", "quantity": 100, "unit": "ml", "aisle": "pantry", "allergens": ["dairy", "eggs", "fish"], "optional": false, "note": "traditional Caesar dressing contains anchovy" },
+      { "name": "olive oil", "quantity": 1, "unit": "tbsp", "aisle": "pantry", "allergens": [], "optional": false }
+    ],
+    "method": [
+      "Rub the chicken with oil and seasoning, then grill or pan-fry for 6-7 minutes each side until cooked through.",
+      "Rest for a few minutes, then slice.",
+      "Tear the romaine into a large bowl and toss with the dressing.",
+      "Top with the sliced chicken, croutons and shaved parmesan."
+    ]
+  },
+  {
+    "name": "Veggie Chilli",
+    "description": "Bean and lentil chilli with rice and avocado.",
+    "meal_types": ["dinner"],
+    "tags": ["vegetarian", "vegan", "gluten-free", "dairy-free", "batch-cook", "freezer-friendly", "comfort"],
+    "servings": 4,
+    "prep_minutes": 10,
+    "cook_minutes": 25,
+    "favourite": true,
+    "ingredients": [
+      { "name": "kidney beans", "quantity": 2, "unit": "can", "aisle": "pantry", "allergens": [], "optional": false },
+      { "name": "black beans", "quantity": 1, "unit": "can", "aisle": "pantry", "allergens": [], "optional": false },
+      { "name": "onion", "quantity": 1, "unit": "pcs", "aisle": "produce", "allergens": [], "optional": false },
+      { "name": "peppers", "quantity": 2, "unit": "pcs", "aisle": "produce", "allergens": [], "optional": false },
+      { "name": "chopped tomatoes", "quantity": 2, "unit": "can", "aisle": "produce", "allergens": [], "optional": false },
+      { "name": "chilli powder", "quantity": 1, "unit": "tbsp", "aisle": "spices", "allergens": [], "optional": false },
+      { "name": "cumin", "quantity": 1, "unit": "tsp", "aisle": "spices", "allergens": [], "optional": false },
+      { "name": "basmati rice", "quantity": 300, "unit": "g", "aisle": "pantry", "allergens": [], "optional": false },
+      { "name": "avocado", "quantity": 1, "unit": "pcs", "aisle": "produce", "allergens": [], "optional": true, "note": "sliced, to serve" }
+    ],
+    "method": [
+      "Soften the onion and peppers in a large pan for 5 minutes.",
+      "Add the chilli powder and cumin and cook for 1 minute until fragrant.",
+      "Stir in the tomatoes and beans, bring to a simmer and cook for 20 minutes, stirring occasionally.",
+      "Meanwhile cook the rice according to the pack.",
+      "Serve the chilli over rice, topped with avocado if using."
+    ]
+  },
+  {
+    "name": "Grilled Chicken & Rice",
+    "description": "Herb-marinated chicken thighs with fluffy rice and salad.",
+    "meal_types": ["dinner"],
+    "tags": ["healthy", "gluten-free"],
+    "servings": 4,
+    "prep_minutes": 15,
+    "cook_minutes": 20,
+    "ingredients": [
+      { "name": "chicken thighs", "quantity": 600, "unit": "g", "aisle": "meat-fish", "allergens": [], "optional": false },
+      { "name": "basmati rice", "quantity": 300, "unit": "g", "aisle": "pantry", "allergens": [], "optional": false },
+      { "name": "mixed herbs", "quantity": 1, "unit": "tbsp", "aisle": "spices", "allergens": [], "optional": false },
+      { "name": "lemon", "quantity": 1, "unit": "pcs", "aisle": "produce", "allergens": [], "optional": false },
+      { "name": "olive oil", "quantity": 2, "unit": "tbsp", "aisle": "pantry", "allergens": [], "optional": false },
+      { "name": "cucumber salad", "quantity": 1, "unit": "pcs", "aisle": "produce", "allergens": [], "optional": true, "note": "sliced, to serve" },
+      { "name": "salt and pepper", "quantity": null, "unit": null, "aisle": "spices", "allergens": [], "optional": true, "note": "to taste" }
+    ],
+    "method": [
+      "Marinate the chicken thighs in the herbs, lemon juice and oil for at least 15 minutes.",
+      "Cook the rice according to the pack.",
+      "Grill or pan-fry the chicken for 8-10 minutes each side until cooked through and charred.",
+      "Rest the chicken for a few minutes, then serve with the rice and cucumber salad."
+    ]
+  },
+  {
+    "name": "Lentil Soup",
+    "description": "Hearty red lentil soup with crusty bread.",
+    "meal_types": ["lunch", "dinner"],
+    "tags": ["vegan", "gluten-free", "dairy-free", "batch-cook", "freezer-friendly", "comfort"],
+    "servings": 4,
+    "prep_minutes": 10,
+    "cook_minutes": 30,
+    "ingredients": [
+      { "name": "red lentils", "quantity": 250, "unit": "g", "aisle": "pantry", "allergens": [], "optional": false },
+      { "name": "onion", "quantity": 1, "unit": "pcs", "aisle": "produce", "allergens": [], "optional": false },
+      { "name": "carrots", "quantity": 2, "unit": "pcs", "aisle": "produce", "allergens": [], "optional": false },
+      { "name": "celery", "quantity": 2, "unit": "pcs", "aisle": "produce", "allergens": [], "optional": false, "note": "stalks" },
+      { "name": "vegetable stock", "quantity": 1, "unit": "l", "aisle": "pantry", "allergens": [], "optional": false },
+      { "name": "cumin", "quantity": 1, "unit": "tsp", "aisle": "spices", "allergens": [], "optional": false },
+      { "name": "crusty bread", "quantity": 4, "unit": "slice", "aisle": "bakery", "allergens": ["gluten"], "optional": true, "note": "to serve" }
+    ],
+    "method": [
+      "Soften the onion, carrot and celery in a large pot for 5 minutes.",
+      "Stir in the cumin and cook for 1 minute.",
+      "Add the lentils and stock, bring to a simmer.",
+      "Cook for 25 minutes, stirring occasionally, until the lentils are soft.",
+      "Blend partially with a stick blender for a thicker texture if you like, then serve with crusty bread."
+    ]
+  },
+  {
+    "name": "Bean Burritos",
+    "description": "Spiced black beans with rice, salsa and cheese in wraps.",
+    "meal_types": ["dinner"],
+    "tags": ["vegetarian"],
+    "servings": 4,
+    "prep_minutes": 15,
+    "cook_minutes": 15,
+    "ingredients": [
+      { "name": "black beans", "quantity": 2, "unit": "can", "aisle": "pantry", "allergens": [], "optional": false },
+      { "name": "basmati rice", "quantity": 200, "unit": "g", "aisle": "pantry", "allergens": [], "optional": false },
+      { "name": "tortilla wraps", "quantity": 8, "unit": "pcs", "aisle": "bakery", "allergens": ["gluten"], "optional": false },
+      { "name": "cheddar cheese", "quantity": 150, "unit": "g", "aisle": "dairy-eggs", "allergens": ["dairy"], "optional": false, "note": "grated" },
+      { "name": "salsa", "quantity": 150, "unit": "ml", "aisle": "pantry", "allergens": [], "optional": false },
+      { "name": "sweetcorn", "quantity": 200, "unit": "g", "aisle": "frozen", "allergens": [], "optional": false },
+      { "name": "cumin", "quantity": 1, "unit": "tsp", "aisle": "spices", "allergens": [], "optional": false }
+    ],
+    "method": [
+      "Cook the rice according to the pack.",
+      "Warm the beans in a pan with the cumin, mashing some slightly.",
+      "Cook the sweetcorn according to the pack.",
+      "Lay out the wraps and fill with rice, beans, sweetcorn, cheese and salsa.",
+      "Fold and roll tightly, then serve, or grill briefly on each side to crisp the outside."
+    ]
+  },
+  {
+    "name": "Mediterranean Couscous",
+    "description": "Fluffy couscous with roasted veg, feta and olives.",
+    "meal_types": ["lunch", "dinner"],
+    "tags": ["vegetarian"],
+    "servings": 4,
+    "prep_minutes": 15,
+    "cook_minutes": 25,
+    "ingredients": [
+      { "name": "couscous", "quantity": 250, "unit": "g", "aisle": "pantry", "allergens": ["gluten"], "optional": false },
+      { "name": "courgette", "quantity": 2, "unit": "pcs", "aisle": "produce", "allergens": [], "optional": false },
+      { "name": "peppers", "quantity": 2, "unit": "pcs", "aisle": "produce", "allergens": [], "optional": false },
+      { "name": "red onion", "quantity": 1, "unit": "pcs", "aisle": "produce", "allergens": [], "optional": false },
+      { "name": "feta cheese", "quantity": 150, "unit": "g", "aisle": "dairy-eggs", "allergens": ["dairy"], "optional": false, "note": "crumbled" },
+      { "name": "olives", "quantity": 80, "unit": "g", "aisle": "pantry", "allergens": [], "optional": false },
+      { "name": "olive oil", "quantity": 2, "unit": "tbsp", "aisle": "pantry", "allergens": [], "optional": false },
+      { "name": "lemon", "quantity": 1, "unit": "pcs", "aisle": "produce", "allergens": [], "optional": false }
+    ],
+    "method": [
+      "Heat the oven to 200C. Chop the courgette, peppers and red onion into chunks.",
+      "Toss the vegetables with half the oil and roast for 25 minutes until tender and caught at the edges.",
+      "Put the couscous in a bowl, cover with boiling water or stock and cover for 5 minutes, then fluff with a fork.",
+      "Combine the couscous with the roasted vegetables, feta and olives.",
+      "Dress with the remaining oil and a squeeze of lemon."
+    ]
+  },
+  {
+    "name": "Porridge with Fruit",
+    "description": "Warm oat porridge with banana, berries and honey.",
+    "meal_types": ["breakfast"],
+    "tags": ["vegetarian", "healthy", "quick"],
+    "servings": 4,
+    "prep_minutes": 5,
+    "cook_minutes": 8,
+    "ingredients": [
+      { "name": "porridge oats", "quantity": 160, "unit": "g", "aisle": "pantry", "allergens": [], "optional": false },
+      { "name": "milk", "quantity": 500, "unit": "ml", "aisle": "dairy-eggs", "allergens": ["dairy"], "optional": false, "note": "or water" },
+      { "name": "banana", "quantity": 2, "unit": "pcs", "aisle": "produce", "allergens": [], "optional": false, "note": "sliced" },
+      { "name": "mixed berries", "quantity": 150, "unit": "g", "aisle": "produce", "allergens": [], "optional": false },
+      { "name": "honey", "quantity": 2, "unit": "tbsp", "aisle": "pantry", "allergens": [], "optional": true },
+      { "name": "ground nutmeg", "quantity": 1, "unit": "pinch", "aisle": "spices", "allergens": [], "optional": true }
+    ],
+    "method": [
+      "Put the oats and milk in a pan and bring to a gentle simmer, stirring often.",
+      "Cook for 5-8 minutes until thick and creamy.",
+      "Spoon into bowls and top with sliced banana and berries.",
+      "Finish with a drizzle of honey and a pinch of nutmeg if you like."
+    ]
+  },
+  {
+    "name": "Scrambled Eggs on Toast",
+    "description": "Fluffy scrambled eggs on buttery toast.",
+    "meal_types": ["breakfast"],
+    "tags": ["vegetarian", "quick"],
+    "servings": 4,
+    "prep_minutes": 5,
+    "cook_minutes": 8,
+    "ingredients": [
+      { "name": "eggs", "quantity": 6, "unit": "pcs", "aisle": "dairy-eggs", "allergens": ["eggs"], "optional": false },
+      { "name": "butter", "quantity": 20, "unit": "g", "aisle": "dairy-eggs", "allergens": ["dairy"], "optional": false },
+      { "name": "milk", "quantity": 2, "unit": "tbsp", "aisle": "dairy-eggs", "allergens": ["dairy"], "optional": true },
+      { "name": "bread", "quantity": 4, "unit": "slice", "aisle": "bakery", "allergens": ["gluten"], "optional": false },
+      { "name": "chives", "quantity": 1, "unit": "tbsp", "aisle": "spices", "allergens": [], "optional": true, "note": "chopped" }
+    ],
+    "method": [
+      "Whisk the eggs with the milk if using, and a pinch of salt.",
+      "Melt the butter in a non-stick pan over low heat.",
+      "Pour in the eggs and stir gently and slowly until softly set.",
+      "Meanwhile toast the bread.",
+      "Pile the eggs onto the toast and scatter with chives."
+    ]
+  },
+  {
+    "name": "Pancakes",
+    "description": "Fluffy pancakes with maple syrup and fresh berries.",
+    "meal_types": ["breakfast"],
+    "tags": ["kid-friendly", "vegetarian"],
+    "servings": 4,
+    "prep_minutes": 10,
+    "cook_minutes": 15,
+    "ingredients": [
+      { "name": "plain flour", "quantity": 200, "unit": "g", "aisle": "bakery", "allergens": ["gluten"], "optional": false },
+      { "name": "eggs", "quantity": 2, "unit": "pcs", "aisle": "dairy-eggs", "allergens": ["eggs"], "optional": false },
+      { "name": "milk", "quantity": 300, "unit": "ml", "aisle": "dairy-eggs", "allergens": ["dairy"], "optional": false },
+      { "name": "butter", "quantity": 20, "unit": "g", "aisle": "dairy-eggs", "allergens": ["dairy"], "optional": false, "note": "for frying" },
+      { "name": "maple syrup", "quantity": 4, "unit": "tbsp", "aisle": "pantry", "allergens": [], "optional": true },
+      { "name": "mixed berries", "quantity": 150, "unit": "g", "aisle": "produce", "allergens": [], "optional": true }
+    ],
+    "method": [
+      "Whisk the flour, eggs and milk together until you have a smooth batter.",
+      "Rest the batter for 10 minutes.",
+      "Melt a little butter in a non-stick pan over medium heat.",
+      "Fry spoonfuls of batter for 2 minutes until bubbles appear, then flip and cook for 1-2 minutes more.",
+      "Stack the pancakes and top with maple syrup and berries."
+    ]
+  },
+  {
+    "name": "Smoothie Bowls",
+    "description": "Blended fruit bowls with granola and seed toppings.",
+    "meal_types": ["breakfast"],
+    "tags": ["vegan", "gluten-free", "dairy-free", "healthy", "quick"],
+    "servings": 4,
+    "prep_minutes": 8,
+    "cook_minutes": 0,
+    "ingredients": [
+      { "name": "frozen mixed berries", "quantity": 300, "unit": "g", "aisle": "frozen", "allergens": [], "optional": false },
+      { "name": "banana", "quantity": 2, "unit": "pcs", "aisle": "produce", "allergens": [], "optional": false },
+      { "name": "oat milk", "quantity": 200, "unit": "ml", "aisle": "pantry", "allergens": [], "optional": false, "note": "or other plant milk" },
+      { "name": "granola", "quantity": 100, "unit": "g", "aisle": "pantry", "allergens": ["gluten"], "optional": true, "note": "use a gluten-free granola if needed" },
+      { "name": "chia seeds", "quantity": 1, "unit": "tbsp", "aisle": "pantry", "allergens": [], "optional": true }
+    ],
+    "method": [
+      "Blend the frozen berries, banana and oat milk until thick and smooth.",
+      "Pour into bowls.",
+      "Top with granola and chia seeds."
+    ]
+  },
+  {
+    "name": "Full English",
+    "description": "Bacon, eggs, sausage, beans, toast and tomatoes.",
+    "meal_types": ["breakfast"],
+    "tags": ["comfort"],
+    "servings": 4,
+    "prep_minutes": 10,
+    "cook_minutes": 20,
+    "ingredients": [
+      { "name": "pork sausages", "quantity": 4, "unit": "pcs", "aisle": "meat-fish", "allergens": [], "optional": false },
+      { "name": "bacon", "quantity": 4, "unit": "pcs", "aisle": "meat-fish", "allergens": [], "optional": false, "note": "rashers" },
+      { "name": "eggs", "quantity": 4, "unit": "pcs", "aisle": "dairy-eggs", "allergens": ["eggs"], "optional": false },
+      { "name": "baked beans", "quantity": 1, "unit": "can", "aisle": "pantry", "allergens": [], "optional": false },
+      { "name": "tomatoes", "quantity": 4, "unit": "pcs", "aisle": "produce", "allergens": [], "optional": false, "note": "halved" },
+      { "name": "mushrooms", "quantity": 200, "unit": "g", "aisle": "produce", "allergens": [], "optional": false },
+      { "name": "bread", "quantity": 4, "unit": "slice", "aisle": "bakery", "allergens": ["gluten"], "optional": false },
+      { "name": "butter", "quantity": 20, "unit": "g", "aisle": "dairy-eggs", "allergens": ["dairy"], "optional": true }
+    ],
+    "method": [
+      "Grill the sausages and bacon until cooked through and crisp.",
+      "Fry or grill the halved tomatoes and mushrooms.",
+      "Warm the baked beans in a small pan.",
+      "Fry the eggs to your liking.",
+      "Toast the bread and butter it.",
+      "Plate everything together and serve hot."
+    ]
+  },
+  {
+    "name": "Tomato Soup & Grilled Cheese",
+    "description": "Classic comfort combo - creamy soup with melty sandwiches.",
+    "meal_types": ["lunch"],
+    "tags": ["vegetarian", "kid-friendly", "comfort"],
+    "servings": 4,
+    "prep_minutes": 10,
+    "cook_minutes": 20,
+    "ingredients": [
+      { "name": "chopped tomatoes", "quantity": 2, "unit": "can", "aisle": "produce", "allergens": [], "optional": false },
+      { "name": "onion", "quantity": 1, "unit": "pcs", "aisle": "produce", "allergens": [], "optional": false },
+      { "name": "garlic", "quantity": 2, "unit": "clove", "aisle": "produce", "allergens": [], "optional": false },
+      { "name": "vegetable stock", "quantity": 500, "unit": "ml", "aisle": "pantry", "allergens": [], "optional": false },
+      { "name": "bread", "quantity": 8, "unit": "slice", "aisle": "bakery", "allergens": ["gluten"], "optional": false },
+      { "name": "cheddar cheese", "quantity": 200, "unit": "g", "aisle": "dairy-eggs", "allergens": ["dairy"], "optional": false, "note": "sliced" },
+      { "name": "butter", "quantity": 30, "unit": "g", "aisle": "dairy-eggs", "allergens": ["dairy"], "optional": false }
+    ],
+    "method": [
+      "Soften the onion and garlic in a pan for 5 minutes.",
+      "Add the tomatoes and stock, bring to a simmer and cook for 15 minutes.",
+      "Blend until smooth and season to taste.",
+      "Butter the bread and fill with cheese, then grill the sandwiches in a pan until golden and the cheese has melted.",
+      "Serve the soup with the sandwiches cut into triangles."
+    ]
+  },
+  {
+    "name": "Wraps & Hummus",
+    "description": "Veggie wraps with homemade hummus and crudites.",
+    "meal_types": ["lunch"],
+    "tags": ["vegan", "dairy-free", "kid-friendly", "quick"],
+    "servings": 4,
+    "prep_minutes": 10,
+    "cook_minutes": 0,
+    "ingredients": [
+      { "name": "tortilla wraps", "quantity": 4, "unit": "pcs", "aisle": "bakery", "allergens": ["gluten"], "optional": false },
+      { "name": "hummus", "quantity": 200, "unit": "g", "aisle": "pantry", "allergens": ["sesame"], "optional": false, "note": "made with tahini" },
+      { "name": "cucumber", "quantity": 1, "unit": "pcs", "aisle": "produce", "allergens": [], "optional": false, "note": "cut into sticks" },
+      { "name": "carrots", "quantity": 2, "unit": "pcs", "aisle": "produce", "allergens": [], "optional": false, "note": "cut into sticks" },
+      { "name": "red pepper", "quantity": 1, "unit": "pcs", "aisle": "produce", "allergens": [], "optional": false, "note": "sliced" },
+      { "name": "mixed lettuce", "quantity": 1, "unit": "pcs", "aisle": "produce", "allergens": [], "optional": false }
+    ],
+    "method": [
+      "Cut the cucumber, carrot and pepper into sticks.",
+      "Spread a generous layer of hummus over each wrap.",
+      "Layer the lettuce and vegetable sticks on top.",
+      "Roll up tightly and slice in half to serve."
+    ]
+  },
+  {
+    "name": "Tuna Pasta Salad",
+    "description": "Cold pasta salad with tuna, sweetcorn and mayo.",
+    "meal_types": ["lunch"],
+    "tags": ["pescatarian"],
+    "servings": 4,
+    "prep_minutes": 15,
+    "cook_minutes": 10,
+    "ingredients": [
+      { "name": "pasta", "quantity": 300, "unit": "g", "aisle": "pantry", "allergens": ["gluten"], "optional": false },
+      { "name": "tuna", "quantity": 2, "unit": "can", "aisle": "meat-fish", "allergens": ["fish"], "optional": false, "note": "drained" },
+      { "name": "sweetcorn", "quantity": 150, "unit": "g", "aisle": "frozen", "allergens": [], "optional": false },
+      { "name": "cherry tomatoes", "quantity": 200, "unit": "g", "aisle": "produce", "allergens": [], "optional": false, "note": "halved" },
+      { "name": "mayonnaise", "quantity": 4, "unit": "tbsp", "aisle": "pantry", "allergens": ["eggs"], "optional": false },
+      { "name": "spring onion", "quantity": 2, "unit": "pcs", "aisle": "produce", "allergens": [], "optional": false, "note": "sliced" }
+    ],
+    "method": [
+      "Cook the pasta in salted boiling water until al dente, then drain and rinse under cold water.",
+      "Flake the tuna into a large bowl.",
+      "Add the cooled pasta, sweetcorn, cherry tomatoes and spring onion.",
+      "Stir through the mayonnaise until everything is coated.",
+      "Chill for 20 minutes before serving if you have time."
+    ]
+  },
+  {
+    "name": "Quesadillas",
+    "description": "Cheese and bean quesadillas with dipping salsa.",
+    "meal_types": ["lunch"],
+    "tags": ["kid-friendly", "vegetarian", "quick"],
+    "servings": 4,
+    "prep_minutes": 10,
+    "cook_minutes": 10,
+    "ingredients": [
+      { "name": "tortilla wraps", "quantity": 4, "unit": "pcs", "aisle": "bakery", "allergens": ["gluten"], "optional": false },
+      { "name": "cheddar cheese", "quantity": 200, "unit": "g", "aisle": "dairy-eggs", "allergens": ["dairy"], "optional": false, "note": "grated" },
+      { "name": "black beans", "quantity": 1, "unit": "can", "aisle": "pantry", "allergens": [], "optional": false },
+      { "name": "sweetcorn", "quantity": 100, "unit": "g", "aisle": "frozen", "allergens": [], "optional": false },
+      { "name": "spring onion", "quantity": 2, "unit": "pcs", "aisle": "produce", "allergens": [], "optional": false, "note": "sliced" },
+      { "name": "salsa", "quantity": 100, "unit": "ml", "aisle": "pantry", "allergens": [], "optional": true, "note": "to serve" }
+    ],
+    "method": [
+      "Scatter cheese, beans, sweetcorn and spring onion over one half of each wrap.",
+      "Fold the other half over to close.",
+      "Cook in a dry pan over medium heat for 2-3 minutes each side, pressing down, until golden and the cheese has melted.",
+      "Cut into wedges and serve with salsa."
+    ]
+  },
+  {
+    "name": "Sunday Roast Chicken",
+    "description": "Roast chicken with all the trimmings and gravy.",
+    "meal_types": ["dinner"],
+    "tags": ["sunday", "comfort"],
+    "servings": 4,
+    "prep_minutes": 20,
+    "cook_minutes": 90,
+    "favourite": true,
+    "ingredients": [
+      { "name": "whole chicken", "quantity": 1.8, "unit": "kg", "aisle": "meat-fish", "allergens": [], "optional": false },
+      { "name": "potatoes", "quantity": 1, "unit": "kg", "aisle": "produce", "allergens": [], "optional": false },
+      { "name": "carrots", "quantity": 400, "unit": "g", "aisle": "produce", "allergens": [], "optional": false },
+      { "name": "parsnips", "quantity": 400, "unit": "g", "aisle": "produce", "allergens": [], "optional": false },
+      { "name": "chicken stock", "quantity": 300, "unit": "ml", "aisle": "pantry", "allergens": [], "optional": false },
+      { "name": "plain flour", "quantity": 2, "unit": "tbsp", "aisle": "bakery", "allergens": ["gluten"], "optional": false, "note": "for the gravy" },
+      { "name": "butter", "quantity": 30, "unit": "g", "aisle": "dairy-eggs", "allergens": ["dairy"], "optional": false },
+      { "name": "mixed herbs", "quantity": 1, "unit": "tbsp", "aisle": "spices", "allergens": [], "optional": false }
+    ],
+    "method": [
+      "Heat the oven to 190C. Rub the chicken with butter and herbs and season well.",
+      "Roast for about 1 hour 20 minutes, until the juices run clear.",
+      "Parboil the potatoes and parsnips for 5 minutes, then roast in a hot tin alongside the chicken for the last 45 minutes.",
+      "Boil the carrots until tender.",
+      "Rest the chicken for 15 minutes, then make gravy in the roasting tin with the flour and stock over heat.",
+      "Carve the chicken and serve with all the trimmings and gravy."
+    ]
+  },
+  {
+    "name": "Slow Cooker Beef Stew",
+    "description": "Tender beef with root veg in rich gravy, set and forget.",
+    "meal_types": ["dinner"],
+    "tags": ["slow-cook", "comfort", "batch-cook", "freezer-friendly"],
+    "servings": 4,
+    "prep_minutes": 20,
+    "cook_minutes": 480,
+    "ingredients": [
+      { "name": "beef chuck", "quantity": 800, "unit": "g", "aisle": "meat-fish", "allergens": [], "optional": false, "note": "cubed" },
+      { "name": "carrots", "quantity": 3, "unit": "pcs", "aisle": "produce", "allergens": [], "optional": false },
+      { "name": "celery", "quantity": 2, "unit": "pcs", "aisle": "produce", "allergens": [], "optional": false, "note": "stalks" },
+      { "name": "onion", "quantity": 1, "unit": "pcs", "aisle": "produce", "allergens": [], "optional": false },
+      { "name": "potatoes", "quantity": 500, "unit": "g", "aisle": "produce", "allergens": [], "optional": false },
+      { "name": "beef stock", "quantity": 600, "unit": "ml", "aisle": "pantry", "allergens": [], "optional": false },
+      { "name": "tomato puree", "quantity": 2, "unit": "tbsp", "aisle": "pantry", "allergens": [], "optional": false },
+      { "name": "bay leaves", "quantity": 2, "unit": "pcs", "aisle": "spices", "allergens": [], "optional": true }
+    ],
+    "method": [
+      "Brown the beef in batches in a hot pan, then transfer to the slow cooker.",
+      "Add the carrots, celery, onion and potatoes.",
+      "Stir in the stock, tomato puree and bay leaves.",
+      "Cook on low for 7-8 hours until the beef is meltingly tender.",
+      "Season to taste and serve."
+    ]
+  },
+  {
+    "name": "Homemade Burgers",
+    "description": "Seasoned beef burgers with all the fixings.",
+    "meal_types": ["dinner"],
+    "tags": ["kid-friendly", "bbq"],
+    "servings": 4,
+    "prep_minutes": 15,
+    "cook_minutes": 12,
+    "ingredients": [
+      { "name": "beef mince", "quantity": 600, "unit": "g", "aisle": "meat-fish", "allergens": [], "optional": false },
+      { "name": "eggs", "quantity": 1, "unit": "pcs", "aisle": "dairy-eggs", "allergens": ["eggs"], "optional": false },
+      { "name": "breadcrumbs", "quantity": 50, "unit": "g", "aisle": "bakery", "allergens": ["gluten"], "optional": false },
+      { "name": "burger buns", "quantity": 4, "unit": "pcs", "aisle": "bakery", "allergens": ["gluten"], "optional": false },
+      { "name": "cheddar cheese", "quantity": 4, "unit": "slice", "aisle": "dairy-eggs", "allergens": ["dairy"], "optional": true },
+      { "name": "lettuce", "quantity": 1, "unit": "pcs", "aisle": "produce", "allergens": [], "optional": true },
+      { "name": "tomato", "quantity": 2, "unit": "pcs", "aisle": "produce", "allergens": [], "optional": true, "note": "sliced" }
+    ],
+    "method": [
+      "Mix the mince, egg, breadcrumbs and seasoning together in a bowl.",
+      "Shape into 4 patties.",
+      "Grill or barbecue for 4-5 minutes each side until cooked through.",
+      "Top with cheese for the last minute of cooking if using, to melt.",
+      "Toast the buns and build the burgers with the toppings you like."
+    ]
+  },
+  {
+    "name": "Fish Pie",
+    "description": "Creamy fish pie with mash topping and mixed seafood.",
+    "meal_types": ["dinner"],
+    "tags": ["comfort", "pescatarian", "freezer-friendly"],
+    "servings": 4,
+    "prep_minutes": 20,
+    "cook_minutes": 35,
+    "favourite": true,
+    "ingredients": [
+      { "name": "cod fillets", "quantity": 300, "unit": "g", "aisle": "meat-fish", "allergens": ["fish"], "optional": false },
+      { "name": "smoked haddock", "quantity": 200, "unit": "g", "aisle": "meat-fish", "allergens": ["fish"], "optional": false },
+      { "name": "king prawns", "quantity": 150, "unit": "g", "aisle": "meat-fish", "allergens": ["shellfish"], "optional": true },
+      { "name": "milk", "quantity": 400, "unit": "ml", "aisle": "dairy-eggs", "allergens": ["dairy"], "optional": false },
+      { "name": "butter", "quantity": 60, "unit": "g", "aisle": "dairy-eggs", "allergens": ["dairy"], "optional": false },
+      { "name": "plain flour", "quantity": 40, "unit": "g", "aisle": "bakery", "allergens": ["gluten"], "optional": false },
+      { "name": "potatoes", "quantity": 900, "unit": "g", "aisle": "produce", "allergens": [], "optional": false },
+      { "name": "cheddar cheese", "quantity": 100, "unit": "g", "aisle": "dairy-eggs", "allergens": ["dairy"], "optional": true, "note": "for the topping" }
+    ],
+    "method": [
+      "Poach the cod and haddock gently in the milk for 5 minutes, then lift out and flake, reserving the milk.",
+      "Melt the butter in a pan, stir in the flour and cook for 1 minute.",
+      "Gradually whisk in the reserved milk to make a smooth white sauce.",
+      "Boil and mash the potatoes.",
+      "Combine the flaked fish, prawns and sauce in a baking dish, top with the mash and cheese.",
+      "Bake at 200C for 25 minutes until golden and bubbling at the edges."
+    ]
+  },
+  {
+    "name": "Pasta Bake",
+    "description": "Cheesy pasta bake with tomato sauce and hidden veg.",
+    "meal_types": ["dinner"],
+    "tags": ["kid-friendly", "vegetarian", "comfort"],
+    "servings": 4,
+    "prep_minutes": 10,
+    "cook_minutes": 30,
+    "ingredients": [
+      { "name": "pasta", "quantity": 350, "unit": "g", "aisle": "pantry", "allergens": ["gluten"], "optional": false },
+      { "name": "chopped tomatoes", "quantity": 2, "unit": "can", "aisle": "produce", "allergens": [], "optional": false },
+      { "name": "onion", "quantity": 1, "unit": "pcs", "aisle": "produce", "allergens": [], "optional": false },
+      { "name": "garlic", "quantity": 2, "unit": "clove", "aisle": "produce", "allergens": [], "optional": false },
+      { "name": "mozzarella", "quantity": 200, "unit": "g", "aisle": "dairy-eggs", "allergens": ["dairy"], "optional": false },
+      { "name": "mixed herbs", "quantity": 1, "unit": "tsp", "aisle": "spices", "allergens": [], "optional": false },
+      { "name": "olive oil", "quantity": 1, "unit": "tbsp", "aisle": "pantry", "allergens": [], "optional": false }
+    ],
+    "method": [
+      "Cook the pasta until just al dente, a minute or two less than the pack says, then drain.",
+      "Soften the onion and garlic in the oil, then add the tomatoes and herbs and simmer for 10 minutes.",
+      "Combine the pasta and sauce in a baking dish.",
+      "Top with the mozzarella.",
+      "Bake at 200C for 20 minutes until bubbling and golden."
+    ]
+  },
+  {
+    "name": "Chicken Satay Skewers",
+    "description": "Grilled chicken skewers with a rich peanut satay sauce.",
+    "meal_types": ["dinner"],
+    "tags": ["bbq"],
+    "servings": 4,
+    "prep_minutes": 20,
+    "cook_minutes": 15,
+    "ingredients": [
+      { "name": "chicken breasts", "quantity": 500, "unit": "g", "aisle": "meat-fish", "allergens": [], "optional": false, "note": "cut into strips" },
+      { "name": "peanut butter", "quantity": 100, "unit": "g", "aisle": "pantry", "allergens": ["peanuts"], "optional": false },
+      { "name": "soy sauce", "quantity": 2, "unit": "tbsp", "aisle": "pantry", "allergens": ["gluten", "soy"], "optional": false },
+      { "name": "coconut milk", "quantity": 200, "unit": "ml", "aisle": "pantry", "allergens": [], "optional": false },
+      { "name": "garlic", "quantity": 2, "unit": "clove", "aisle": "produce", "allergens": [], "optional": false },
+      { "name": "soft brown sugar", "quantity": 1, "unit": "tbsp", "aisle": "pantry", "allergens": [], "optional": false },
+      { "name": "lime", "quantity": 1, "unit": "pcs", "aisle": "produce", "allergens": [], "optional": false },
+      { "name": "basmati rice", "quantity": 300, "unit": "g", "aisle": "pantry", "allergens": [], "optional": false, "note": "to serve" }
+    ],
+    "method": [
+      "Cut the chicken into strips and thread onto skewers.",
+      "Warm the peanut butter, soy sauce, coconut milk, garlic and brown sugar in a small pan, stirring until smooth.",
+      "Spoon a few tablespoons of the sauce over the chicken and marinate for at least 15 minutes.",
+      "Grill or griddle the skewers for 10-12 minutes, turning occasionally, until charred and cooked through.",
+      "Meanwhile cook the rice according to the pack.",
+      "Serve the skewers with rice, the remaining satay sauce and a squeeze of lime."
+    ]
+  },
+  {
+    "name": "Pesto Pasta with Pine Nuts",
+    "description": "Fast pesto pasta finished with toasted pine nuts and parmesan.",
+    "meal_types": ["dinner", "lunch"],
+    "tags": ["vegetarian", "quick"],
+    "servings": 4,
+    "prep_minutes": 5,
+    "cook_minutes": 12,
+    "ingredients": [
+      { "name": "pasta", "quantity": 350, "unit": "g", "aisle": "pantry", "allergens": ["gluten"], "optional": false },
+      { "name": "pesto", "quantity": 200, "unit": "g", "aisle": "pantry", "allergens": ["nuts", "dairy"], "optional": false, "note": "basil pesto with pine nuts and parmesan" },
+      { "name": "pine nuts", "quantity": 30, "unit": "g", "aisle": "pantry", "allergens": ["nuts"], "optional": false, "note": "toasted, to serve" },
+      { "name": "parmesan", "quantity": 40, "unit": "g", "aisle": "dairy-eggs", "allergens": ["dairy"], "optional": false, "note": "grated, to serve" },
+      { "name": "cherry tomatoes", "quantity": 200, "unit": "g", "aisle": "produce", "allergens": [], "optional": false, "note": "halved" },
+      { "name": "olive oil", "quantity": 1, "unit": "tbsp", "aisle": "pantry", "allergens": [], "optional": false }
+    ],
+    "method": [
+      "Cook the pasta in salted boiling water until al dente, then drain, reserving a splash of the cooking water.",
+      "Toss the hot pasta with the pesto and the reserved water to loosen the sauce.",
+      "Stir through the halved cherry tomatoes and a drizzle of olive oil.",
+      "Toast the pine nuts in a dry pan for 1-2 minutes until golden.",
+      "Divide between bowls and scatter with the toasted pine nuts and grated parmesan."
+    ]
+  }
+]
