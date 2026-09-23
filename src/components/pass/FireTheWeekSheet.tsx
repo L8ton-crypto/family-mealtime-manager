@@ -51,8 +51,27 @@ export function FireTheWeekSheet({ open, onClose, members, onFire, anchorRef }: 
   }
 
   return (
-    <Sheet open={open} onClose={onClose} title="Fire the week" anchorRef={anchorRef}>
-      <div className="flex flex-col gap-4">
+    <Sheet
+      open={open}
+      onClose={onClose}
+      title="Fire the week"
+      anchorRef={anchorRef}
+      size="roomy"
+      footer={
+        <div className="flex flex-col gap-2">
+          {error && <p className="text-sm text-eightysix">{error}</p>}
+          <div className="flex items-center gap-2">
+            <Button variant="pass" onClick={handleFire} disabled={busy || slots.length === 0} className="flex-1">
+              {busy ? 'Firing…' : 'Fire'}
+            </Button>
+            <Button variant="ghost" onClick={freshShuffle}>
+              Fresh shuffle
+            </Button>
+          </div>
+        </div>
+      }
+    >
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
         <div>
           <p className="mb-2 font-mono text-xs uppercase tracking-widest text-ink-soft">Services</p>
           <div className="flex flex-wrap gap-1.5">
@@ -76,7 +95,7 @@ export function FireTheWeekSheet({ open, onClose, members, onFire, anchorRef }: 
           </div>
         </div>
 
-        <div>
+        <div className="md:col-span-2">
           <ChipToggle
             label="Keep what's already on the pass"
             pressed={keepExisting}
@@ -88,16 +107,6 @@ export function FireTheWeekSheet({ open, onClose, members, onFire, anchorRef }: 
             </p>
           )}
         </div>
-
-        <Button variant="ink" onClick={freshShuffle}>
-          Fresh shuffle
-        </Button>
-
-        {error && <p className="text-sm text-eightysix">{error}</p>}
-
-        <Button variant="pass" onClick={handleFire} disabled={busy || slots.length === 0}>
-          {busy ? 'Firing…' : 'Fire'}
-        </Button>
       </div>
     </Sheet>
   );

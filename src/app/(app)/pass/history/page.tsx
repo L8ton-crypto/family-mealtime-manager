@@ -8,7 +8,7 @@ import { EmptyState } from '@/components/ui/EmptyState';
 import { Button } from '@/components/ui/Button';
 import { Sheet } from '@/components/ui/Sheet';
 import { DayChooser } from '@/components/pass/DayChooser';
-import { PlateCheck } from '@/components/pass/PlateCheck';
+import { PlateCheck, PlateCheckFooter } from '@/components/pass/PlateCheck';
 import { usePlanHistory } from '@/hooks/usePlanHistory';
 import { useMembers } from '@/hooks/useMembers';
 import { formatDayLong } from '@/lib/dates';
@@ -134,14 +134,10 @@ export default function PassHistoryPage() {
           onClose={() => setPlateCheckEntry(null)}
           anchorRef={anchorRef}
           title={plateCheckEntry.recipe ? plateCheckEntry.recipe.name : (plateCheckEntry.custom_name ?? '')}
+          size="roomy"
+          footer={<PlateCheckFooter onDone={() => setPlateCheckEntry(null)} onSkip={() => setPlateCheckEntry(null)} />}
         >
-          <PlateCheck
-            entry={plateCheckEntry}
-            members={members}
-            onSaved={refresh}
-            onDone={() => setPlateCheckEntry(null)}
-            onSkip={() => setPlateCheckEntry(null)}
-          />
+          <PlateCheck entry={plateCheckEntry} members={members} onSaved={refresh} />
         </Sheet>
       )}
     </div>

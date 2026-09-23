@@ -275,6 +275,17 @@ body::before {
   animation: rk-sheet-in 200ms cubic-bezier(0.2, 0.8, 0.3, 1);
 }
 
+/* The Pass, Part B (docs/slices/06): the lifted ticket while dragging — a
+   DragOverlay clone, scaled up with a deeper shadow and a slight rotation.
+   Only ever applied when NOT reduced-motion (the caller omits the class
+   entirely in that case — see PassView's DragOverlay), so there's no
+   transition/animation-duration to shorten here, just a static transform
+   that's conditionally not applied in the first place. */
+.rk-drag-lift {
+  transform: scale(1.03) rotate(2deg);
+  box-shadow: 4px 6px 0 0 var(--ink), 0 12px 28px rgba(0, 0, 0, 0.35);
+}
+
 /* The Pass: a soft radial pass-orange glow behind today's column/day chip —
    the "heat lamp". Pure CSS, positioned behind the element's own content
    via a pseudo so it never intercepts clicks. */

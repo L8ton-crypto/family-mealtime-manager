@@ -6,7 +6,7 @@ import { Sheet } from '@/components/ui/Sheet';
 import { Button } from '@/components/ui/Button';
 import { ChipToggle } from '@/components/ui/ChipToggle';
 import { Field, FieldTextarea } from '@/components/ui/Field';
-import { PlateCheck } from './PlateCheck';
+import { PlateCheck, PlateCheckFooter } from './PlateCheck';
 import { MEAL_TYPES, type MealType } from '@/lib/vocab';
 import type { PatchPlanEntryInput, PlanEntry } from '@/hooks/usePlan';
 import type { Member } from '@/hooks/useMembers';
@@ -48,16 +48,23 @@ export function ActionSheet({ open, onClose, anchorRef, entry, members, onPatch,
     setError(null);
     const wasPlated = entry.status === 'plated';
     const nextStatus = wasPlated ? 'planned' : 'plated';
-    const result = await onPatch({ status: nextStatus }, true);
-    if (!result) {
-      setError('Could not update — try again.');
-      return;
-    }
     // Plating (not un-plating) a dish with a real recipe swaps this sheet
     // straight to Plate check — see docs/slices/03-engine.md. A custom
     // entry ("Takeaway") has nothing to rate, so it just flips status.
-    if (!wasPlated && entry.recipe) {
-      setView('plateCheck');
+    //
+    // QA fix 4 (docs/slices/06's Build notes): switch the VIEW optimistically
+    // too, in the same tick as the optimistic data patch below (`onPatch`'s
+    // `optimistic=true`) — not after awaiting the PATCH+refresh round trip.
+    // If the PATCH then fails, roll the view back to `actions` alongside the
+    // data's own optimistic rollback (already handled by usePlan), so the
+    // household never sits looking at a Plate check for a dish that, per the
+    // server, was never actually plated.
+    const willSwitchToPlateCheck = !wasPlated && Boolean(entry.recipe);
+    if (willSwitchToPlateCheck) setView('plateCheck');
+    const result = await onPatch({ status: nextStatus }, true);
+    if (!result) {
+      setError('Could not update — try again.');
+      if (willSwitchToPlateCheck) setView('actions');
     }
   }
 
@@ -105,20 +112,21 @@ export function ActionSheet({ open, onClose, anchorRef, entry, members, onPatch,
 
   if (view === 'plateCheck' && entry.recipe) {
     return (
-      <Sheet open={open} onClose={onClose} title={dishName} anchorRef={anchorRef}>
-        <PlateCheck
-          entry={entry}
-          members={members}
-          onSaved={onRatingSaved}
-          onDone={() => setView('actions')}
-          onSkip={() => setView('actions')}
-        />
+      <Sheet
+        open={open}
+        onClose={onClose}
+        title={dishName}
+        anchorRef={anchorRef}
+        size="roomy"
+        footer={<PlateCheckFooter onDone={() => setView('actions')} onSkip={() => setView('actions')} />}
+      >
+        <PlateCheck entry={entry} members={members} onSaved={onRatingSaved} />
       </Sheet>
     );
   }
 
   return (
-    <Sheet open={open} onClose={onClose} title={dishName} anchorRef={anchorRef}>
+    <Sheet open={open} onClose={onClose} title={dishName} anchorRef={anchorRef} size="compact">
       <div className="flex flex-col gap-4">
         {entry.compat && !entry.compat.safe && (
           <div className="rounded-sm border-l-4 border-eightysix bg-paper-2 p-3">

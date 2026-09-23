@@ -51,7 +51,21 @@ export function DayChooser({
   }
 
   return (
-    <Sheet open={open} onClose={onClose} title={title} anchorRef={anchorRef}>
+    <Sheet
+      open={open}
+      onClose={onClose}
+      title={title}
+      anchorRef={anchorRef}
+      size="compact"
+      footer={
+        <div className="flex flex-col gap-2">
+          {error && <p className="text-sm text-eightysix">{error}</p>}
+          <Button variant="pass" onClick={handleConfirm} disabled={busy}>
+            {busy ? 'Firing…' : confirmLabel}
+          </Button>
+        </div>
+      }
+    >
       <div className="flex flex-col gap-4">
         <div>
           <p className="mb-2 font-mono text-xs uppercase tracking-widest text-ink-soft">When</p>
@@ -69,10 +83,6 @@ export function DayChooser({
             ))}
           </div>
         </div>
-        {error && <p className="text-sm text-eightysix">{error}</p>}
-        <Button variant="pass" onClick={handleConfirm} disabled={busy}>
-          {busy ? 'Firing…' : confirmLabel}
-        </Button>
       </div>
     </Sheet>
   );

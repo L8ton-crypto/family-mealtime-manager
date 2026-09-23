@@ -39,7 +39,7 @@ export function SettingsSheet({ open, onClose, theme, onToggleTheme, anchorRef }
   }
 
   return (
-    <Sheet open={open} onClose={onClose} title="Settings" anchorRef={anchorRef}>
+    <Sheet open={open} onClose={onClose} title="Settings" anchorRef={anchorRef} size="compact">
       <div className="flex flex-col gap-5">
         <div>
           <p className="mb-2 font-mono text-xs uppercase tracking-widest text-ink-soft">Theme</p>

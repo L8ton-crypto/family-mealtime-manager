@@ -11,20 +11,31 @@ function isTypingTarget(target: EventTarget | null): boolean {
   return tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT';
 }
 
-/** True while any Sheet (or the shortcuts help ticket, which shares the same dialog markup) is open. */
-function isDialogOpen(): boolean {
-  return document.querySelector('[role="dialog"][aria-modal="true"]') !== null;
+/**
+ * True while any Sheet (or the shortcuts help ticket, which shares the same
+ * dialog markup) is open, OR while a drag is in flight on The Pass (see
+ * PassView's `data-dragging="true"` wrapper around its DndContext —
+ * docs/slices/06's QA fix 3). Both are cases where a global single-key
+ * shortcut must not fire: e.g. pressing `]` mid-drag must not change the
+ * week out from under a ticket that's currently lifted.
+ */
+function isDialogOpenOrDragging(): boolean {
+  return (
+    document.querySelector('[role="dialog"][aria-modal="true"]') !== null ||
+    document.querySelector('[data-dragging="true"]') !== null
+  );
 }
 
 /**
  * Registers single, unmodified-key shortcuts (`[`, `]`, `t`, `f`, `/`, `?`,
  * ...) per docs/slices/05-service.md's Keyboard scope. Ignored while typing
- * in an input/textarea/select/contenteditable, and while any Sheet is open
- * — this hook never itself listens for "Escape", so Sheet's own existing
- * Escape-to-close handler is completely unaffected either way. Each caller
- * (AppShell for the global "?", The Pass for `[`/`]`/`t`/`f`, The Menu for
- * `/`) passes only the keys it owns, so there's never a collision to
- * resolve between pages.
+ * in an input/textarea/select/contenteditable, while any Sheet is open, and
+ * while a Pass drag is in flight — this hook never itself listens for
+ * "Escape", so Sheet's own existing Escape-to-close handler (and dnd-kit's
+ * own Escape-to-cancel handler) are completely unaffected either way. Each
+ * caller (AppShell for the global "?", The Pass for `[`/`]`/`t`/`f`, The
+ * Menu for `/`) passes only the keys it owns, so there's never a collision
+ * to resolve between pages.
  */
 export function useKeyboardShortcuts(handlers: ShortcutMap): void {
   // A ref, not a dependency array entry: callers pass a fresh object literal
@@ -41,7 +52,7 @@ export function useKeyboardShortcuts(handlers: ShortcutMap): void {
     function onKeyDown(e: KeyboardEvent) {
       if (e.defaultPrevented || e.metaKey || e.ctrlKey || e.altKey) return;
       if (isTypingTarget(e.target)) return;
-      if (isDialogOpen()) return;
+      if (isDialogOpenOrDragging()) return;
       const handler = handlersRef.current[e.key];
       if (!handler) return;
       e.preventDefault();

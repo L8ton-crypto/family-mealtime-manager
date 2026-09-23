@@ -10,8 +10,6 @@ import type { Verdict } from '@/lib/vocab';
 interface PlateCheckProps {
   entry: PlanEntry;
   members: Member[];
-  onDone: () => void;
-  onSkip: () => void;
   /** Called after every successful save, so the caller can refresh entries (keeps /pass/history's "complete" tick and the menu card's Kitchen record in sync). */
   onSaved?: () => void;
 }
@@ -28,7 +26,7 @@ const VERDICT_OPTIONS: { verdict: Verdict; label: string; icon: typeof CircleChe
  * note per member. Lives inside a Sheet (see ActionSheet's plate-check view,
  * a plated ticket's own Plate check button, and /pass/history rows).
  */
-export function PlateCheck({ entry, members, onDone, onSkip, onSaved }: PlateCheckProps) {
+export function PlateCheck({ entry, members, onSaved }: PlateCheckProps) {
   const byMember = new Map(entry.ratings.map((r) => [r.memberId, r]));
   const [ratings, setRatings] = useState<Map<number, PlanEntryRating>>(byMember);
   const [notesDraft, setNotesDraft] = useState<Record<number, string>>(
@@ -94,7 +92,7 @@ export function PlateCheck({ entry, members, onDone, onSkip, onSaved }: PlateChe
                       aria-pressed={pressed}
                       disabled={saving === member.id}
                       onClick={() => saveRating(member.id, verdict, notesDraft[member.id] ?? '')}
-                      className={`flex min-h-[44px] flex-col items-center justify-center gap-1 rounded-sm border px-2 py-2 font-mono text-[11px] uppercase tracking-wide transition-colors disabled:opacity-50 ${
+                      className={`flex min-h-[48px] flex-col items-center justify-center gap-1 rounded-sm border px-2 py-2 font-mono text-[11px] uppercase tracking-wide transition-colors disabled:opacity-50 ${
                         pressed ? 'border-pass bg-pass text-pass-ink' : 'border-steel bg-paper-2 text-ink-soft hover:border-pass'
                       }`}
                     >
@@ -119,15 +117,31 @@ export function PlateCheck({ entry, members, onDone, onSkip, onSaved }: PlateChe
         })}
         {attendeeMembers.length === 0 && <p className="text-sm text-ink-soft">Nobody&apos;s down as a cover for this one.</p>}
       </div>
+    </div>
+  );
+}
 
-      <div className="flex items-center gap-2 border-t border-steel pt-3">
-        <Button variant="pass" onClick={onDone}>
-          Done
-        </Button>
-        <Button variant="ghost" onClick={onSkip}>
-          Skip
-        </Button>
-      </div>
+interface PlateCheckFooterProps {
+  onDone: () => void;
+  onSkip: () => void;
+}
+
+/**
+ * Plate check's primary action, `Done`/`Skip` — rendered by the caller as
+ * the enclosing roomy Sheet's sticky `footer` (see ActionSheet and
+ * /pass/history), not inside PlateCheck's own (scrollable) body, so it's
+ * always reachable per docs/slices/06's "the primary action ... sits in a
+ * sticky footer" rule.
+ */
+export function PlateCheckFooter({ onDone, onSkip }: PlateCheckFooterProps) {
+  return (
+    <div className="flex items-center gap-2">
+      <Button variant="pass" onClick={onDone}>
+        Done
+      </Button>
+      <Button variant="ghost" onClick={onSkip}>
+        Skip
+      </Button>
     </div>
   );
 }

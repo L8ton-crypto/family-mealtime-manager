@@ -129,14 +129,63 @@ export function DishPicker({
   }
 
   return (
-    <Sheet open={open} onClose={onClose} title="Fire something" anchorRef={anchorRef}>
+    <Sheet
+      open={open}
+      onClose={onClose}
+      title="Fire something"
+      anchorRef={anchorRef}
+      size="roomy"
+      footer={
+        <div className="flex flex-col gap-2">
+          <p className="font-mono text-xs uppercase tracking-widest text-ink-soft">Something else</p>
+          <div className="flex flex-wrap items-end gap-2">
+            {QUICK_CUSTOM.map((label) => (
+              <Button key={label} variant="ink" onClick={() => handleChooseCustom(label)} disabled={busy}>
+                {label}
+              </Button>
+            ))}
+            <Field
+              label="Or type your own"
+              value={customName}
+              onChange={(e) => setCustomName(e.target.value)}
+              className="min-w-[160px] flex-1"
+            />
+            <Button variant="pass" onClick={() => handleChooseCustom(customName)} disabled={busy || !customName.trim()}>
+              Fire it
+            </Button>
+          </div>
+        </div>
+      }
+    >
       <div className="flex flex-col gap-4">
+        {/* Sticky under the header: search + meal-type chips + the safe-only toggle, on one row per docs/slices/06. The -mx-4/px-4 pair bleeds this block to the sheet body's own edges so its background covers the results scrolling underneath it. */}
+        <div className="sticky top-0 -mx-4 z-10 flex flex-col gap-3 border-b border-steel bg-paper px-4 pb-3 pt-3">
+          <Field
+            label="Search"
+            placeholder="Search the menu…"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            autoFocus
+          />
+          <div className="flex flex-wrap items-center gap-1.5">
+            {MEAL_TYPES.map((mt) => (
+              <ChipToggle
+                key={mt}
+                label={mt.toUpperCase()}
+                pressed={mealTypeFilters.includes(mt)}
+                onToggle={() => toggleMealType(mt)}
+              />
+            ))}
+            <ChipToggle label="Safe for these covers" pressed={safeOnly} onToggle={() => setSafeOnly((v) => !v)} />
+          </div>
+        </div>
+
         {chefsPicks.length > 0 && (
           <div className="flex flex-col gap-2">
             <p className="flex items-center gap-1.5 font-mono text-xs uppercase tracking-widest text-ink-soft">
               <ChefHat size={13} aria-hidden="true" /> Chef&apos;s picks
             </p>
-            <div className="flex flex-col gap-2">
+            <div className="grid grid-cols-1 gap-2 md:grid-cols-2">
               {chefsPicks.map((pick) => (
                 <button
                   key={pick.recipe.id}
@@ -158,30 +207,9 @@ export function DishPicker({
           </div>
         )}
 
-        <Field
-          label="Search"
-          placeholder="Search the menu…"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          autoFocus
-        />
-
-        <div className="flex flex-wrap gap-1.5">
-          {MEAL_TYPES.map((mt) => (
-            <ChipToggle
-              key={mt}
-              label={mt.toUpperCase()}
-              pressed={mealTypeFilters.includes(mt)}
-              onToggle={() => toggleMealType(mt)}
-            />
-          ))}
-        </div>
-
-        <ChipToggle label="Safe for these covers" pressed={safeOnly} onToggle={() => setSafeOnly((v) => !v)} />
-
         {error && <p className="text-sm text-eightysix">{error}</p>}
 
-        <div className="flex max-h-[280px] flex-col gap-2 overflow-y-auto">
+        <div className="grid grid-cols-1 gap-2 md:grid-cols-2">
           {results.length === 0 && <p className="text-sm text-ink-soft">No dishes match.</p>}
           {results.map(({ recipe, compat }) => (
             <button
@@ -209,28 +237,6 @@ export function DishPicker({
               )}
             </button>
           ))}
-        </div>
-
-        <div className="border-t border-steel pt-3">
-          <p className="mb-2 font-mono text-xs uppercase tracking-widest text-ink-soft">Something else</p>
-          <div className="mb-3 flex flex-wrap gap-1.5">
-            {QUICK_CUSTOM.map((label) => (
-              <Button key={label} variant="ink" onClick={() => handleChooseCustom(label)} disabled={busy}>
-                {label}
-              </Button>
-            ))}
-          </div>
-          <div className="flex items-end gap-2">
-            <Field
-              label="Or type your own"
-              value={customName}
-              onChange={(e) => setCustomName(e.target.value)}
-              className="flex-1"
-            />
-            <Button variant="pass" onClick={() => handleChooseCustom(customName)} disabled={busy || !customName.trim()}>
-              Fire it
-            </Button>
-          </div>
         </div>
       </div>
     </Sheet>
